@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+
+  db:
+    image: nouchka/sqlite3:latest
